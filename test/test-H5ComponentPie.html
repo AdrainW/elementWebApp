@@ -42,6 +42,43 @@
 
         <script type="text/javascript">
 
+            var cfg = {
+                type : 'pie',
+                
+                width : 400,
+                height : 400,
+
+                data:[
+                    ['Js' , .7  ,'#ff7676'],
+                    ['CSS3' , .01 ],
+                    ['HTML5' , .01  ],
+                    ['PHP' , .13  ],
+                    ['jQuery' , .15 ]
+                ],
+                css : {
+                    top:100,
+                    opacity:0
+                },
+                animateIn:{
+                    opacity:1,
+                    top:200,
+                },
+                animateOut:{
+                    opacity:0,
+                    top:100,
+                },
+                center : true,
+            }
+
+            var h5 = new H5ComponentPie( 'myBarComponent', cfg );
+            $('.iphone').append(h5);
+
+
+            var leave = true;
+            $('body').click(function (){
+                leave = !leave;
+                $('.h5_component').trigger( leave ? 'onLeave' : 'onLoad' )
+            }).click();
 
         </script>
 
